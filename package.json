@@ -1,0 +1,40 @@
+{
+  "name": "digestd",
+  "version": "0.2.0",
+  "description": "your own newsletter, from your own feeds, in your own voice. local-first, zero saas.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Dragoon0x",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dragoon0x/digestd"
+  },
+  "bin": {
+    "digestd": "./src/cli.ts"
+  },
+  "scripts": {
+    "start": "bun run src/cli.ts",
+    "init": "bun run src/cli.ts init",
+    "run": "bun run src/cli.ts run",
+    "test": "bun test",
+    "build": "bun build src/cli.ts --compile --outfile dist/digestd",
+    "build:all": "bun run scripts/build-all.ts"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0",
+    "yaml": "^2.6.0"
+  },
+  "engines": {
+    "bun": ">=1.1.0"
+  },
+  "keywords": [
+    "newsletter",
+    "rss",
+    "digest",
+    "automation",
+    "local-first",
+    "cli",
+    "feed-reader",
+    "hackernews"
+  ]
+}

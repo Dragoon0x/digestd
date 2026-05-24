@@ -1,0 +1,39 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        bun-version: [1.1.x, latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ matrix.bun-version }}
+
+      - name: install
+        run: bun install --frozen-lockfile
+
+      - name: test
+        run: bun test
+
+      - name: build binary
+        run: bun build src/cli.ts --compile --outfile dist/digestd
+
+      - name: smoke test binary
+        run: |
+          ./dist/digestd --version
+          ./dist/digestd init /tmp/smoke
+          test -f /tmp/smoke/digestd.config.yaml

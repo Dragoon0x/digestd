@@ -1,0 +1,22 @@
+{
+  "_comment": "Example bookmarks.json format. Any of these top-level shapes work: a plain array, {bookmarks: [...]}, {tweets: [...]}, or {items: [...]}. Each entry needs at minimum a `url`. The other fields are all optional but improve the digest.",
+  "bookmarks": [
+    {
+      "title": "A great essay on local-first software",
+      "url": "https://www.inkandswitch.com/local-first/",
+      "author": "ink-and-switch",
+      "createdAt": "2024-01-15T10:30:00Z",
+      "summary": "Seven properties of local-first software."
+    },
+    {
+      "title": "Why I love rust",
+      "url": "https://example.com/rust-love",
+      "author": "alice",
+      "createdAt": "2024-02-01T14:22:00Z"
+    },
+    {
+      "url": "https://example.com/no-title-just-url",
+      "text": "Sometimes you bookmark something with just text, no title. digestd will use the first 200 chars as the title."
+    }
+  ]
+}
