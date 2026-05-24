@@ -222,5 +222,24 @@ issues and PRs welcome. especially:
 
 ---
 
+## status
+
+**experimental. pre-1.0.** apis, config schema, and on-disk state format
+may change between minor versions without migration. pin a tag if you
+need stability.
+
+## dyor
+
+digestd fetches, filters, and summarizes whatever sources you point it
+at. summaries are not advice — financial, legal, medical, or otherwise —
+even when the underlying source is. **always read the original before
+acting on anything.** llm scoring can mis-rank, drop relevant items, or
+keep junk; treat the output as a starting point, not a verdict.
+
+provided as-is, no warranty. see [`DISCLAIMER.md`](DISCLAIMER.md) for the
+full text on data, llm usage, and your responsibilities as the operator.
+
+---
+
 made by [@Dragoon0x](https://github.com/Dragoon0x). part of a small
 constellation of local-first builder tools.
